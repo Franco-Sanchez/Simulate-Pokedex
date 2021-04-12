@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://dragon-ball-api.herokuapp.com/api/'
