@@ -5,6 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import { Global, css } from '@emotion/react';
 
 const globalStyles = css`
+  @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Roboto&display=swap');
+
   * {
     margin: 0;
     padding: 0;
@@ -14,6 +16,10 @@ const globalStyles = css`
   body {
     max-width: 1440px;
     margin: 0 auto;
+  }
+
+  li {
+    list-style: none;
   }
 `
 

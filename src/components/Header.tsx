@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
+  padding: 5px 0;
   background-color: ${colors.yellow};
   box-shadow: 4px 4px 16px rgba(1, 28, 64, 0.2);
 `

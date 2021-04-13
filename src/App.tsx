@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Header>
-        <Link to='/'><img src={logo} alt='logo' /></Link>
+        <Link to='/'><img src={logo} alt='logo' width="100px" /></Link>
       </Header>
       <main>
           <Route exact path="/" component={Pokemons} />
