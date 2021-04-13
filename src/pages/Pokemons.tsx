@@ -10,7 +10,9 @@ function Pokemons () {
   useEffect(() => {
     const getPokemons = async () => {
       const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`);
-      setPokemons(response.data.results)
+      const pokemonPromises = response.data.results.map(async (pokemon) => await axios.get(pokemon.url))
+      const pokemonsRes: any = await Promise.all(pokemonPromises)
+      setPokemons(pokemonsRes)
     }
     getPokemons();
   }, [offset])
@@ -23,10 +25,14 @@ function Pokemons () {
 
   return (
     <div>
-      {pokemons.map((pokemon: any) => (
       <ul>
-        <li onClick={() => goToPokemonProfile(pokemon.name)}>{pokemon.name}</li>
-      </ul>))}
+        {pokemons.map((pokemon: any) => (
+          <div>
+            <img src={pokemon.data.sprites.back_default} alt={pokemon.data.name} />
+            <li onClick={() => goToPokemonProfile(pokemon.data.name)}>{pokemon.data.name}</li>
+          </div>
+        ))}
+      </ul>
       {offset > 0 && <button onClick={handlePreviousPagination}>Previous</button> }
       {offset < 1100 && <button onClick={handleNextPagination}>Next</button> }
     </div>

@@ -3,14 +3,9 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 function Pokemon() {
-  const objPokemon : any = null
+  const pokemonRes : any = null
 
-  interface objPokemon {
-    name?: string,
-    sprites?: {}
-  }
-
-  const [pokemon, setPokemon] = useState(objPokemon) 
+  const [pokemon, setPokemon] = useState(pokemonRes) 
   const { name } = useParams<{ name?: string }>();
   
   useEffect(() => {
@@ -19,7 +14,7 @@ function Pokemon() {
       setPokemon(response.data)
     }
     getPokemon();
-  }, [])
+  }, [name])
 
   return (
     <div>
