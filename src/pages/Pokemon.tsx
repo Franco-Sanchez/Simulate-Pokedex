@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 
-function Character() {
+function Pokemon() {
   const { name } = useParams<{ name?: string }>();
   
-  return <div></div>
+  return <div>{name}</div>
 }
 
-export default Character;
+export default Pokemon;
