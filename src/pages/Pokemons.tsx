@@ -22,20 +22,25 @@ function Pokemons () {
   const handleNextPagination = () => setOffset(offset + 20);
 
   const goToPokemonProfile = (name) => history.push(`/pokemon/${name}`)
+  
+  // const changeImage = (e, pokemon) => e.target.src = pokemon.data.sprites.front_default
 
   return (
-    <div>
+    <>
       <ul>
         {pokemons.map((pokemon: any) => (
           <div>
-            <img src={pokemon.data.sprites.back_default} alt={pokemon.data.name} />
+            <img 
+              // onMouseOver={(e) => changeImage(e, pokemon)}
+              src={pokemon.data.sprites.front_default}
+              alt={pokemon.data.name} />
             <li onClick={() => goToPokemonProfile(pokemon.data.name)}>{pokemon.data.name}</li>
           </div>
         ))}
       </ul>
       {offset > 0 && <button onClick={handlePreviousPagination}>Previous</button> }
       {offset < 1100 && <button onClick={handleNextPagination}>Next</button> }
-    </div>
+    </>
   )
 }
 
