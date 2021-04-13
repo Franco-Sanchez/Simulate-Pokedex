@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 
 function Pokemons () {
-  const [data, setData] = useState([]);
+  const [pokemons, setPokemons] = useState([]);
   const [offset, setOffset] = useState(0);
   const history = useHistory()
 
   useEffect(() => {
     const getPokemons = async () => {
       const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`);
-      setData(response.data.results)
+      setPokemons(response.data.results)
     }
     getPokemons();
   }, [offset])
@@ -23,7 +23,7 @@ function Pokemons () {
 
   return (
     <div>
-      {data.map((pokemon: any) => (
+      {pokemons.map((pokemon: any) => (
       <ul>
         <li onClick={() => goToPokemonProfile(pokemon.name)}>{pokemon.name}</li>
       </ul>))}
