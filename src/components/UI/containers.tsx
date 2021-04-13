@@ -10,6 +10,10 @@ export const PokemonsContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 15px;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr
+  }
 `
 
 export const StatsContainer = styled.div`
@@ -22,6 +26,12 @@ export const StatsContainer = styled.div`
   height: 100%;
   z-index: 10;
   gap: 5px;
+
+  @media screen and (max-width: 500px) {
+    position: relative;
+    padding-left: 0;
+    align-items: center
+  }
 `
 
 export const ExperienceContainer = styled.div`
@@ -47,6 +57,7 @@ export const ImageContainer = styled.div`
   right: 0;
   height: 100%;
   min-width: 200px;
+  overflow: hidden;
   
   & img {
     transition: all ease 0.5s;
@@ -54,5 +65,22 @@ export const ImageContainer = styled.div`
 
   & .large {
     transform: scale(1.2);
+  }
+
+  @media screen and (max-width: 500px) {
+    position: relative;
+    border-radius: 0px 0px 8px 8px;
+  }
+`
+
+export const IconsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & svg {
+    cursor: pointer;
+    font-size: 20px;
   }
 `

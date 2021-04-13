@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Card from '../components/Card';
-import { PokemonsContainer, PokemonsSection } from '../components/UI/containers';
+import { PokemonsContainer, PokemonsSection, IconsContainer } from '../components/UI/containers';
 import { AiFillCaretLeft, AiOutlineCaretRight } from 'react-icons/ai';
 
 function Pokemons () {
@@ -37,17 +37,5 @@ function Pokemons () {
     </>
   )
 }
-
-const IconsContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  & svg {
-    cursor: pointer;
-    font-size: 20px;
-  }
-`
 
 export default Pokemons;

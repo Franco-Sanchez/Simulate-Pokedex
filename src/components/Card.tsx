@@ -45,6 +45,11 @@ const StyledCard = styled.div`
   border-radius: 8px;
   background-color: ${colors.white};
   box-shadow: 2px 15px 18px -20px rgba(0,0,0,0.75);
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export default Card;

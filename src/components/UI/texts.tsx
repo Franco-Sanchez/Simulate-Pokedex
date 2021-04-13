@@ -7,6 +7,10 @@ export const PokemonName = styled.h3`
   line-height: 21px;
   text-transform: capitalize;
   text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+
+  @media screen and (max-width: 844px) {
+    max-width: max-content;
+  }
 `
 
 export const ExperienceText = styled.p`
