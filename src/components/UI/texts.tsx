@@ -55,3 +55,8 @@ export const CardParagraph = styled.p`
 `
 
 export const MoveText = CardParagraph.withComponent('li');
+
+export const MessageError = styled.p`
+  font-family: 'Roboto';
+  font-size: 50px;
+`

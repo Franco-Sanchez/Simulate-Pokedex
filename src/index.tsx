@@ -27,6 +27,10 @@ const globalStyles = css`
     display: grid;
     grid-template-rows: min-content auto;
   }
+
+  i {
+    font-size: 100px;
+  }
 `
 
 ReactDOM.render(
