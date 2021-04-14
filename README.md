@@ -2,37 +2,22 @@
 
 # React Senior Challenge
 
-## 👩‍💻 Proyect Overview
+## 👩‍💻 About the project
 
-- Crear una SPA
-- Utilizar fetch o axios para consultar una api https://dragon-ball-api.herokuapp.com/documentation​ o ​https://pokeapi.co/
-- Listar todos los personajes de la api
-- Al hacer click sobre el personaje abrir una página nueva y mostrar toda la informacióndel personaje
-- Utilizar Css, puede ser css, sass o styled component
+This project was created with React and TypeScript. To consult the api I used Axios and for the styles I chose styled components through Emotion.
 
-Recuerda que no tenemos un timeline, reclutamos on a rolling basis. Recuerda de actualizar el form que recibiste en tu correo cuando termines la prueba.
-Al completar la prueba tecinca avisanos por aca (usa el mismo correo): https://airtable.com/shrfLtBYqMg3jY3dc
+## 🦶 Installation
 
-## 🎯 Puntos
+When you clone the repository, you need to run this command to install the dependencies on your device:
 
-1. Utilizar Typescript
-2. Utilizar variables de entorno
-3. Buen código e Indentación del código
+1) yarn install
 
-## 🎯 Bonificaciones
+## 🎯 Adittional
 
-- Poder hacer SSR
-- Montar el proyecto en docker y docker-compose
-- Crear Test E2E se recomienda utilizar cypress
+If you want to view the project in the browswer, you must run <b><i>yarn start</i></b>. This looks like:
 
-## 📃 Disclaimer
+<img src="https://res.cloudinary.com/dzy6tpyc7/image/upload/v1618440505/d-una-pokemon_o87gaf.png" width="900">
 
-Esto es un desafío técnico sin proposito comercial y D-Una de ninguna manera:
+## 📃 Final message
 
-- Compartirá o usará tu código
-- Obligarte a realizar este desafío
-- Compensarte de cualquier forma por realizar este desafío
-
-# Buena suerte 🚀
-
-Esta prueba se puede completar fácilmente en un lapso de 6 a 8 horas
+Thanks for your time and for the opportunity you gave me to improve my skills in React and practice new technologies. I appreciate it.

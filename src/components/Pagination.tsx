@@ -23,7 +23,7 @@ const StyledLi = styled.li<LiProps>`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: ${props => props.selector == props.data ? `${colors.red}` : 'black'};
+  background-color: ${props => props.selector === props.data ? `${colors.red}` : 'black'};
   cursor: pointer;
 `
 
