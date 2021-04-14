@@ -1,12 +1,14 @@
-import styled from '@emotion/styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Card from '../components/Card';
-import { PokemonsContainer, PokemonsSection, IconsContainer } from '../components/UI/containers';
+import { PokemonsContainer, IconsContainer } from '../components/UI/containers';
 import { AiFillCaretLeft, AiOutlineCaretRight } from 'react-icons/ai';
+import styled from '@emotion/styled';
 
 function Pokemons () {
   const [pokemons, setPokemons] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
@@ -24,18 +26,20 @@ function Pokemons () {
   const handleNextPagination = () => setOffset(offset + 9);
 
   return (
-    <>
-      <PokemonsSection>
-        <PokemonsContainer>
-          {pokemons.map((pokemon: any) => <Card key={pokemon.data.name} pokemon={pokemon.data} /> )}
-        </PokemonsContainer>
-          <IconsContainer>
-            {offset > 0 && <AiFillCaretLeft onClick={handlePreviousPagination} /> }
-            {offset < 1116 && <AiOutlineCaretRight onClick={handleNextPagination} /> }
-          </IconsContainer>
-      </PokemonsSection>
-    </>
+    <PokemonsSection>
+      <PokemonsContainer>
+        {pokemons.map((pokemon: any) => <Card key={pokemon.data.name} pokemon={pokemon.data} /> )}
+      </PokemonsContainer>
+        <IconsContainer>
+          {offset > 0 && <AiFillCaretLeft onClick={handlePreviousPagination} /> }
+          {offset < 1116 && <AiOutlineCaretRight onClick={handleNextPagination} /> }
+        </IconsContainer>
+    </PokemonsSection>
   )
 }
+
+const PokemonsSection = styled.section`
+  padding: 30px 10%;
+`
 
 export default Pokemons;

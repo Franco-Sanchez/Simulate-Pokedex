@@ -21,6 +21,12 @@ const globalStyles = css`
   li {
     list-style: none;
   }
+
+  .root {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: min-content auto;
+  }
 `
 
 ReactDOM.render(

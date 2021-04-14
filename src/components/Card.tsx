@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 import { useHistory } from "react-router";
 import { PokemonName } from "./UI/texts";
-import  { StatsContainer, ExperienceContainer, TypesContainer, ImageContainer } from '../components/UI/containers';
+import  { DataContainer, StatBox, TypesContainer, ImageContainer } from '../components/UI/containers';
 import colors from '../components/UI/colors';
 import Type from './card/Type';
-import { ExperienceText } from './UI/texts';
-import Experience from './card/Experience';
+import { StatText } from './UI/texts';
+import Stat from './card/Stat';
 import { useState } from "react";
 
 function Card({ pokemon }) {
@@ -20,17 +20,17 @@ function Card({ pokemon }) {
       onMouseOver={()=> setLarge(true)}
       onMouseOut={() => setLarge(false)}
     >
-      <StatsContainer>
+      <DataContainer>
         <PokemonName>{pokemon.name}</PokemonName>
-        <ExperienceContainer>
-          <Experience experience={pokemon.base_experience} />
-          <ExperienceText>Experience</ExperienceText>
-        </ExperienceContainer>
-        <TypesContainer>
+        <StatBox profile={false}>
+          <Stat stat={pokemon.base_experience} />
+          <StatText>Experience</StatText>
+        </StatBox>
+        <TypesContainer profile={false}>
           {pokemon.types.map((objType, index) => <Type key={index} name={objType.type.name} />)}
         </TypesContainer>
-      </StatsContainer>
-      <ImageContainer>
+      </DataContainer>
+      <ImageContainer profile={false}>
         <img className={large ? 'large': ''} src={pokemon.sprites.front_default} alt={pokemon.name} />
       </ImageContainer>
     </StyledCard>
